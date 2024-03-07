@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #cce5ff;
+            /* Light Blue Background */
+            color: #ffffff;
+            /* White Text */
+        }
+
+        .navbar {
+            background-color: #343a40;
+            /* Dark Gray Navbar Background */
+            color: #ffffff;
+            /* White Text */
+        }
+
+        .container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .card {
+            background-color: #ffffff;
+            /* White Card Background */
+            border: 1px solid #dee2e6;
+            /* Light Gray Border */
+            border-radius: 10px;
+            /* Rounded Corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Box Shadow */
+            max-width: 600px;
+            /* Set maximum width for the card */
+            margin: 0 auto;
+            /* Center the card horizontally */
+        }
+
+        .form-container {
+            padding: 20px;
+            text-align: left; /* Left-align the text inside the form container */
+        }
+
+        button {
+            background-color: #007bff;
+            /* Blue Button */
+            color: #ffffff;
+            /* White Text */
+        }
+
+        button:hover {
+            background-color: #0095b3;
+            /* Darker Blue on Hover */
+        }
+    </style>
+</head>
+
+{% include 'myblogs/navbar.html' %}
+
+<body
+    style="background-image: url('https://images6.alphacoders.com/729/thumb-1920-729803.jpg'); background-size: cover; color: #ffffff;">
+
+    <div class="container">
+        <h3 class="display-5 mb-3">CREATE YOUR CUSTOMIZED BLOG</h3>
+        <div class="card form-container mx-auto">
+            <form method="post" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ x.as_p }}
+                <button class="btn btn-primary btn-outline-dark mt-2" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
+
